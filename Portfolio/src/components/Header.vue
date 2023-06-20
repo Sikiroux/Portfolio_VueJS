@@ -10,6 +10,7 @@
             <a href="#">Créations</a>
             <a href="#">Contact</a>
         </nav>
+        <button>Ajouter projet</button>
     </header>
 </template>
 
@@ -25,8 +26,9 @@
     }
     
     .logo-holder {
-        height: 80px;
-        width: 80px;
+        height: 65px
+        ;
+        width: 65px;
         background-image: url(./icons/Logo.png);
         background-size: cover;
         border-radius: 50%;
@@ -49,7 +51,20 @@
         text-align: center;
         margin-right: 70px;
         margin-left: 30%;
-        gap: 150px;
+        gap: 80px;
+    }
+
+    button {
+        padding: 4px;
+        border: 1px solid white;
+        background-color: rgb(43, 43, 43);
+        color: white;
+        border-radius: 5px;
+        margin-right: 50px;
+    }
+
+    button:hover {
+        opacity: 70%;
     }
 
 </style>
