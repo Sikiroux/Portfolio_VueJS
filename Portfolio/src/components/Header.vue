@@ -21,7 +21,6 @@
         width: 100%;
         margin-top: 15px;
         align-items: center;
-        border-bottom: 3px solid rgb(31, 30, 30);
         padding-bottom: 20px;
     }
     
