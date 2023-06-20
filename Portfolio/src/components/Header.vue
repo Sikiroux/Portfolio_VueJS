@@ -14,7 +14,7 @@
 </template>
 
 
-<style>
+<style scoped>
     header {
         display: flex;
         width: 100%;
