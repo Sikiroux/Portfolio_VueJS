@@ -35,15 +35,24 @@
         margin-left: 40px;
     }
     
+    .logo-holder:hover {
+        box-shadow:  rgb(204, 204, 204) 1px 0 10px;
+        transition-duration: 450ms;
+        cursor: pointer;
+    }
+    
     nav a {
         text-decoration: none;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     nav a:hover {
-        color: gray;
+        text-shadow: rgb(204, 204, 204) 1px 0 10px;
+        transition-duration: 450ms;
+        transform: scale(1.1);
     }
+    
 
     nav {
         display: grid;
@@ -64,7 +73,10 @@
     }
 
     button:hover {
-        opacity: 70%;
+        box-shadow:  rgb(204, 204, 204) 1px 0 10px;
+        transition-duration: 450ms;
+        text-shadow: rgb(204, 204, 204) 1px 0 10px;
+        cursor: pointer;
     }
 
 </style>
