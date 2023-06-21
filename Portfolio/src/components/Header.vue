@@ -25,9 +25,8 @@
     }
     
     .logo-holder {
-        height: 65px
-        ;
-        width: 65px;
+        height: 65px;
+        min-width: 65px;
         background-image: url(./icons/Logo.png);
         background-size: cover;
         border-radius: 50%;
