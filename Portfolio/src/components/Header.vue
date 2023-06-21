@@ -21,14 +21,12 @@
         width: 100%;
         margin-top: 15px;
         align-items: center;
-        border-bottom: 3px solid rgb(31, 30, 30);
         padding-bottom: 20px;
     }
     
     .logo-holder {
-        height: 65px
-        ;
-        width: 65px;
+        height: 65px;
+        min-width: 65px;
         background-image: url(./icons/Logo.png);
         background-size: cover;
         border-radius: 50%;
