@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import TheHeader from './components/Header.vue'
 import TheFooter from './components/Footer.vue'
+import Slideshow from './components/Slideshow.vue'
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import TheFooter from './components/Footer.vue'
 
     </p>
   </main>
+  <Slideshow></Slideshow>
   <TheFooter></TheFooter>
   </body>
   
