@@ -3,11 +3,11 @@
 </script>
 
 <template>
-    <h2>Projects</h2>
+    <h2 class="project-title-section">Projects</h2>
     <section class="slideshow-container">
         <ul class="slideshow">
             <li class="slideshow__item" >
-                <h3>Signup-Form</h3>
+                <h3 class="item__title">Signup-Form</h3>
                 <a href="https://github.com/Sikiroux/TOP-Sign-up-form" target="_blank">
                     <div class="item__background-image"></div>
                 </a>
@@ -16,8 +16,8 @@
     </section>
 </template>
 
-<style scoped>
-    h2 {
+<style>
+    .project-title-section {
         text-align: center;
         margin-top: 60px;
         font-size: 2.3rem;
@@ -53,7 +53,7 @@
         filter: blur(0);
     }
 
-    h3 {
+    .item__title {
         position: relative;
         z-index: 1;
         text-align: center;
