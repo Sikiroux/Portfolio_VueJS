@@ -1,6 +1,12 @@
-<script>
+<script setup>
 import Modal from "./ModalProject.vue"
-let button = document.body.querySelector("button");
+
+</script>
+
+<script>
+
+
+
 </script>
 
 <template>
@@ -11,9 +17,12 @@ let button = document.body.querySelector("button");
             <a href="#">Créations</a>
             <a href="#">Contact</a>
         </nav>
-        <button class="add-project-button">Ajouter projet</button>
+        <button class="add-project-button" ref="button">Ajouter projet</button>
     </header>
+    <Modal/>
 </template>
+
+
 
 
 <style>
@@ -78,49 +87,5 @@ let button = document.body.querySelector("button");
         cursor: pointer;
     }
 
-    .modal-container {
-        position : absolute;
-        height : 400px;
-        width : 500px;
-        top : 80px;
-        display: flex;
-        flex-direction: column;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 15px;
-        padding: 15px; 
-        color: white;
-        background-color: black;
-        align-items: start;
-    }
-
-    .modal__close-button {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        font-weight: bold;
-    }
-
-    .modal__add-button {
-        font-weight: bold;
-    }
-
-    .modal-container input {
-        width: 350px;
-        margin-bottom: 20px;
-    }
-
-    .modal-container label {
-        font-weight: bold;
-    }
-    
-    .modal-container input {
-        margin-right: auto;
-        margin-left: auto;
-    }
     
 </style>
