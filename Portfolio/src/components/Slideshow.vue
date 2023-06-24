@@ -1,5 +1,13 @@
-<script>
+<script setup>
+import { onMounted } from "vue";
+import {useModalStore} from "../stores/modal"
 
+const store = useModalStore();
+
+onMounted(() => {
+    const slideShow = document.querySelector(".slideshow");
+    
+})
 </script>
 
 <template>

@@ -1,8 +1,10 @@
 <script setup>
 import { onMounted } from 'vue';
-function sayHello(){
-    alert("Hello");
-}
+import {useModalStore} from '../stores/modal'
+
+const store = useModalStore();
+
+
 onMounted(() => {
     const addButton = document.querySelector(".form__add-button");
     const closeButton = document.querySelector(".form__close-button");
@@ -14,6 +16,14 @@ onMounted(() => {
     const links = document.querySelector("#links");
     const imageLinks = document.querySelector("#image-links");
 
+    let modalData = {
+            title: "",
+            date: "",
+            technology: "",
+            links: "",
+            imageLinks: "",
+    }
+    
 
     
     function closeModal() {
@@ -29,15 +39,12 @@ onMounted(() => {
         
     }
 
-    function getModalData() {
-        let modalData = {
-            title: title.value,
-            date: date.value,
-            technology: technology.value,
-            links: links.value,
-            imageLinks: imageLinks.value,
-        }
-        console.log(modalData);
+    function registeredModalData() {
+        store.title = title.value;
+        store.date = date.value;
+        store.technology = technology.value;
+        store.links = links.value;
+        store.imageLinks = imageLinks.value;
     }
 
     function removeFieldsData() {
@@ -51,12 +58,14 @@ onMounted(() => {
     
     function onAddButton() {
         preventSubmit(event);
-        getModalData();
+        registeredModalData();
         removeFieldsData();
         closeModal();
+        console.log(store.title);
+        console.log(store.date);
     }
 
-
+    
     closeButton.addEventListener("click", closeModal, false);
     buttonProject.addEventListener("click", openModal, false);
     addButton.addEventListener("click", onAddButton, false);
@@ -64,6 +73,12 @@ onMounted(() => {
     modal.style.display = "none";
 })
 
+
+
+
+</script>
+
+<script>
 
 </script>
 

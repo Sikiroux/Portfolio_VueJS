@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted } from "vue";
 import Modal from "./ModalProject.vue"
-
 </script>
 
 <script>
+
 </script>
 
 <template>
