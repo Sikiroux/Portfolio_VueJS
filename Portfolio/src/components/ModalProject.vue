@@ -1,4 +1,40 @@
-<script>
+<script setup>
+import { onMounted } from 'vue';
+function sayHello(){
+    alert("Hello");
+}
+onMounted(() => {
+    const addButton = document.querySelector(".form__add-button");
+    const closeButton = document.querySelector(".form__close-button");
+    const modal = document.querySelector(".modal-container");
+    const buttonProject = document.querySelector(".add-project-button");
+    
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    function openModal() {
+        modal.style.display = "flex";
+    }
+
+    function preventSubmit(event) {
+        event.preventDefault();
+        
+    }
+
+    function onAddButton() {
+        preventSubmit(event);
+        closeModal();
+    }
+
+
+    closeButton.addEventListener("click", closeModal, false);
+    buttonProject.addEventListener("click", openModal, false);
+    addButton.addEventListener("click", onAddButton, false);
+
+    modal.style.display = "none";
+})
+
 
 </script>
 
@@ -21,17 +57,17 @@
             <input type="text" id="links">
         </div>
         <div class="input-holder">
-            <label for="image-links">Liens vers image d'exemple</label>
+            <label for="image-links">Liens vers image d'exemple: </label>
             <input type="text" id="image-links">
         </div>
         <div class="button-container">
             <button type="submit" class="form__add-button">Ajouter</button>
-            <button class="form__close-button">X</button>
+            <button type="button" class="form__close-button">X</button>
         </div>
     </form>
 </template>
 
-<style>
+<style scoped>
     .modal-container {
         position : absolute;
         height : 400px;
@@ -47,6 +83,7 @@
         color: white;
         background-color: black;
         align-items: start;
+        z-index: 1;
     }
 
     .form__close-button {
