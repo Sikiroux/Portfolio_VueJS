@@ -8,6 +8,13 @@ onMounted(() => {
     const closeButton = document.querySelector(".form__close-button");
     const modal = document.querySelector(".modal-container");
     const buttonProject = document.querySelector(".add-project-button");
+    const title = document.querySelector("#title");
+    const date = document.querySelector("#date");
+    const technology = document.querySelector("#technology");
+    const links = document.querySelector("#links");
+    const imageLinks = document.querySelector("#image-links");
+
+
     
     function closeModal() {
         modal.style.display = "none";
@@ -22,8 +29,30 @@ onMounted(() => {
         
     }
 
+    function getModalData() {
+        let modalData = {
+            title: title.value,
+            date: date.value,
+            technology: technology.value,
+            links: links.value,
+            imageLinks: imageLinks.value,
+        }
+        console.log(modalData);
+    }
+
+    function removeFieldsData() {
+        title.value = "";
+        date.value = "";
+        technology.value = "";
+        links.value = "";
+        imageLinks.value = "";
+
+    }
+    
     function onAddButton() {
         preventSubmit(event);
+        getModalData();
+        removeFieldsData();
         closeModal();
     }
 
