@@ -1,22 +1,30 @@
+<script setup>
+import { onMounted } from "vue";
+import Modal from "./ModalProject.vue"
+</script>
+
 <script>
 
 </script>
 
 <template>
-    <header>
+    <header class="header-component">
         <div class="logo-holder"></div>
-        <nav>
+        <nav class="navigation">
             <a href="#">Présentation</a>
             <a href="#">Créations</a>
             <a href="#">Contact</a>
         </nav>
-        <button>Ajouter projet</button>
+        <button class="add-project-button" ref="button">Ajouter projet</button>
     </header>
+    <Modal/>
 </template>
 
 
-<style scoped>
-    header {
+
+
+<style>
+    .header-component {
         display: flex;
         width: 100%;
         margin-top: 15px;
@@ -39,20 +47,20 @@
         cursor: pointer;
     }
     
-    nav a {
+    .navigation a {
         text-decoration: none;
         color: white;
         font-size: 1.3rem;
     }
 
-    nav a:hover {
+    .navigation a:hover {
         text-shadow: rgb(204, 204, 204) 1px 0 10px;
         transition-duration: 450ms;
         transform: scale(1.1);
     }
     
 
-    nav {
+    .navigation {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         text-align: center;
@@ -61,7 +69,7 @@
         gap: 80px;
     }
 
-    button {
+    .add-project-button {
         padding: 4px;
         border: 1px solid white;
         background-color: rgb(43, 43, 43);
@@ -70,11 +78,12 @@
         margin-right: 50px;
     }
 
-    button:hover {
+    .add-project-button:hover {
         box-shadow:  rgb(204, 204, 204) 1px 0 10px;
         transition-duration: 450ms;
         text-shadow: rgb(204, 204, 204) 1px 0 10px;
         cursor: pointer;
     }
 
+    
 </style>

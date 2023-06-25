@@ -1,23 +1,30 @@
-<script>
+<script setup>
+import { onMounted } from "vue";
+import {useModalStore} from "../stores/modal"
+
+
+const store = useModalStore();
+let slides = store.slideArray
+console.log(slides);
 
 </script>
 
 <template>
-    <h2>Projects</h2>
+    <h2 class="project-title-section">Projects</h2>
     <section class="slideshow-container">
         <ul class="slideshow">
-            <li class="slideshow__item" >
-                <h3>Signup-Form</h3>
-                <a href="https://github.com/Sikiroux/TOP-Sign-up-form" target="_blank">
-                    <div class="item__background-image"></div>
+            <li class="slideshow__item" v-for="slide in slides" :key="slide.id">
+                <h3 class="item__title">{{ slide.title }}</h3>
+                <a :href="slide.link" target="_blank">
+                    <div class="item__background-image" :style="{'background-image': 'url('+ slide.imageLinks + ')'}"></div>
                 </a>
             </li>
         </ul>
     </section>
 </template>
 
-<style scoped>
-    h2 {
+<style>
+    .project-title-section {
         text-align: center;
         margin-top: 60px;
         font-size: 2.3rem;
@@ -37,7 +44,6 @@
     }
 
     .item__background-image {
-        background-image: url(./images/TOP-signup-form.png);
         background-size: cover;
         background-repeat: no-repeat;
         height: 290px;
@@ -53,7 +59,7 @@
         filter: blur(0);
     }
 
-    h3 {
+    .item__title {
         position: relative;
         z-index: 1;
         text-align: center;
