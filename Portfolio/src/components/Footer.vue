@@ -20,8 +20,6 @@
 
     footer {
         width: 100%;
-        position: absolute;
-        bottom: 2%;
         display: flex;
         flex-direction: column;
         align-items: center;
