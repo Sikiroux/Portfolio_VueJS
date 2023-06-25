@@ -121,7 +121,7 @@ onMounted(() => {
         color: white;
         background-color: black;
         align-items: start;
-        z-index: 1;
+        z-index: 8;
     }
 
     .form__close-button {
