@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import TheHeader from './components/Header.vue'
 import TheFooter from './components/Footer.vue'
 import Slideshow from './components/Slideshow.vue'
+import Modal from './components/ModalProject.vue'
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import Slideshow from './components/Slideshow.vue'
     </p>
   </main>
   <Slideshow></Slideshow>
+  <Modal></Modal>
   <TheFooter></TheFooter>
   </body>
   

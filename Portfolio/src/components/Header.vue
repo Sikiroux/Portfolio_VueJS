@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted } from "vue";
-import Modal from "./ModalProject.vue"
 </script>
 
 <script>
@@ -15,9 +14,7 @@ import Modal from "./ModalProject.vue"
             <a href="#">Créations</a>
             <a href="#">Contact</a>
         </nav>
-        <button class="add-project-button" ref="button">Ajouter projet</button>
     </header>
-    <Modal/>
 </template>
 
 
