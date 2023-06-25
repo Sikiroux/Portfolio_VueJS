@@ -16,6 +16,13 @@ export const useModalStore = defineStore("modal", ()=> {
             technology: "",
             link: "https://github.com/Sikiroux/TOP-Sign-up-form",
             imageLinks: "./src/components/images/TOP-signup-form.png"
+        },
+        {
+            id: id++,
+            title: "Calculator",
+            technology: "",
+            link:"https://github.com/Sikiroux/TOP-Calculator",
+            imageLinks: "./src/components/images/Calculator.png"
         }
     ])
 
