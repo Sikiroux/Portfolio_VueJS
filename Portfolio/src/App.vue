@@ -4,6 +4,7 @@ import TheHeader from './components/Header.vue'
 import TheFooter from './components/Footer.vue'
 import Slideshow from './components/Slideshow.vue'
 import Modal from './components/ModalProject.vue'
+import Contact from './components/Contact.vue'
 </script>
 
 <template>
@@ -11,20 +12,26 @@ import Modal from './components/ModalProject.vue'
   <TheHeader></TheHeader>
   <!-- Setting up main content -->
   <main>
-    <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
+    <section>
+      <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
       <h1>Ia orana.</h1>
-    </a>
-    <p>My name is Damien Ekouma Ndong, I'm still learning web developement.
-      At the moment I did not build any full fledged website but all my projects can be seen here.  
-    </p>
-    <br/>
-    <p>
-      I love learning and I'm always looking to get better day after day.
+      </a>
+      <p>My name is Damien Ekouma Ndong, I'm still learning web developement.
+        At the moment I did not build any full fledged website but all my projects can be seen here.  
+      </p>
+      <br/>
+      <p>
+        I love learning and I'm always looking to get better day after day.
 
-    </p>
+      </p>
+    </section>
+    
+    <Slideshow></Slideshow>
+    <Contact></Contact>
   </main>
-  <Slideshow></Slideshow>
-  <Modal></Modal>
+  
+  
+  
   <TheFooter></TheFooter>
   </body>
   
@@ -33,7 +40,7 @@ import Modal from './components/ModalProject.vue'
 
 <style scoped>
 
- main {
+ main section{
   margin-left: 130px;
   margin-top: 80px;
   color: white;

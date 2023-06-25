@@ -1,25 +1,54 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import {useModalStore} from "../stores/modal"
+import Modal from "./ModalProject.vue"
 
 
 let store = useModalStore();
 let slides = store.slideArray
+let display = ref(false);
+let title = ref("");
+let date = ref("");
+let technology = ref("");
+let links = ref("");
+let imageLinks = ref("");
 
+function openModal() {
+    display.value = true;
+    console.log(display.value);
+}
+
+function getDataForModal(slide) {
+    console.log(title.value);
+    title.value = slide.title;
+    date.value = slide.date;
+    technology.value = slide.technology;
+    links.value = slide.link;
+    imageLinks.value = slide.imageLinks;
+
+}
+
+function executeFunction(slide) {
+    getDataForModal(slide);
+    openModal();
+}
+
+function handleCloseModal() {
+    display.value = false;
+}
 </script>
 
 <template>
     <h2 class="project-title-section">Projects</h2>
     <section class="slideshow-container">
         <ul class="slideshow">
-            <li class="slideshow__item" v-for="slide in slides" :key="slide.id">
+            <li class="slideshow__item" v-for="slide in slides" :key="slide.id" @click="executeFunction(slide)">
                 <h3 class="item__title">{{ slide.title }}</h3>
-                <a :href="slide.link" target="_blank">
-                    <div class="item__background-image" :style="{'background-image': 'url('+ slide.imageLinks + ')'}"></div>
-                </a>
+                <div class="item__background-image" :style="{'background-image': 'url('+ slide.imageLinks + ')'}"></div>
             </li>
         </ul>
     </section>
+    <Modal :display="display" :title="title" :date="date" :technology="technology" :links="links" :imageLinks="imageLinks"  @close="handleCloseModal"></Modal>
 </template>
 
 <style>

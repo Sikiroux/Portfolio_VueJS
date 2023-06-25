@@ -1,60 +1,9 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, defineProps } from 'vue';
 import {useModalStore} from '../stores/modal'
 
 
-const store = useModalStore();
-const arrayData = store.slideArray;
-const modals = ref(false);
-const title = ref("");
-const date = ref("");
-const technology = ref("");
-const links = ref("");
-const imageLinks = ref("")
-let id = store.id;
-
-function openModal() {
-        modals.value = true;
-}
-
-
-function onAddButton() {
-        preventSubmit(event);
-        registeredModalData();
-        removeFieldsData();
-        closeModal();
-}
-
-function closeModal() {
-        modals.value = false;
-}
-
-    
-
-function preventSubmit(event) {
-    event.preventDefault();
-}
-
-function registeredModalData() {
-   let modalDataObject = {
-        id: id++,
-        title: title.value,
-        technology: technology.value,
-        link: links.value,
-        imageLinks: imageLinks.value
-    }
-    arrayData.push(modalDataObject);
-}
-
-function removeFieldsData() {
-    title.value = "";
-    date.value = "";
-    technology.value = "";
-    links.value = "";
-    imageLinks.value = "";
-
-}
-
+const props = defineProps(['display', 'title', 'date', 'technology', 'links', 'imageLinks'])
 
 </script>
 
@@ -63,53 +12,51 @@ function removeFieldsData() {
 </script>
 
 <template>
-    <button class="add-project-button" @click="openModal">Ajouter projet</button>
-    <form class="modal-container" v-if="modals">
-        <div class="input-holder">
-            <label for="title">Titre :</label>
-            <input id="title" type="text" v-model="title">
+    <section class="modal-container" v-if="display">
+        <div class="data-holder">
+            <h2 id="modal-title">{{ title }}</h2>
         </div>
-        <div class="input-holder">
-            <label for="date">Date :</label>
-            <input id="date" type="date" v-model="date">
+        <div class="data-holder">
+            <h3 class="title">Date : </h3>
+            <p>{{ date }}</p>
         </div>
-        <div class="input-holder">
-            <label for="technology">Technologie utilisée(s) :</label>
-            <input id="technology" type="text" v-model="technology">
+        <div class="data-holder">
+            <h3 class="title">Technologie utilisée(s) : </h3>
+            <p>{{ technology }}</p>
         </div>
-        <div class="input-holder">
-            <label for="links">Liens vers site/repository</label>
-            <input type="text" id="links" v-model="links">
+        <div class="data-holder">
+            <h3 class="title">Liens vers site/repository : </h3>
+            <a :href="links" target="_blank" class="link">Cliquez ici</a>
         </div>
-        <div class="input-holder">
-            <label for="image-links">Liens vers image d'exemple: </label>
-            <input type="text" id="image-links" v-model="imageLinks">
+        <div class="data-holder">
+            <h3 class="title">Liens vers image d'exemple : </h3>
+            <a :href="imageLinks" target="_blank" class="link">Ouvrez moi</a>
         </div>
         <div class="button-container">
-            <button type="submit" class="form__add-button" @click="onAddButton">Ajouter</button>
-            <button type="button" class="form__close-button" @click="closeModal">X</button>
+            <button type="button" class="form__close-button" @click="$emit('close')">X</button>
         </div>
-    </form>
+    </section>
 </template>
 
 <style scoped>
     .modal-container {
         display: flex;
-        position : absolute;
+        position : fixed;
         height : 400px;
         width : 500px;
-        top : 80px;
-        display: flex;
         flex-direction: column;
         left: 50%;
         top: 50%;
+        transform: translateY(-50%);
         transform: translate(-50%, -50%);
         border-radius: 15px;
         padding: 15px; 
         color: white;
         background-color: black;
-        align-items: start;
-        z-index: 8;
+        align-items: center;
+        z-index: 9999;
+
+        max-height: calc(100vh - 100px);
     }
 
     .form__close-button {
@@ -126,25 +73,36 @@ function removeFieldsData() {
         font-weight: bold;
     }
 
-    .modal-container input {
-        width: 350px;
-        margin-bottom: 20px;
-    }
-
-    .modal-container label {
-        font-weight: bold;
-    }
-    
-    .modal-container input {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .add-project-button{
         position: absolute;
         left: 50%;
         top: 84%;
         transform: translate(-50%);
     }
+
+    #modal-title {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .data-holder .link {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        filter: brightness(1.8);
+        border: 2px solid rgb(255, 255, 255);
+    }
     
+    .data-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 15px;
+        padding-bottom: 19px;
+    }
 </style>
