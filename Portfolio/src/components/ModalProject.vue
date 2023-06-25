@@ -16,13 +16,7 @@ onMounted(() => {
     const links = document.querySelector("#links");
     const imageLinks = document.querySelector("#image-links");
 
-    let modalData = {
-            title: "",
-            date: "",
-            technology: "",
-            links: "",
-            imageLinks: "",
-    }
+    const slideShow = document.querySelector(".slideshow");
     
 
     

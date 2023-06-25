@@ -8,5 +8,17 @@ export const useModalStore = defineStore("modal", ()=> {
     let links = ref("");
     let imageLinks = ref("");
 
-    return{ title, date, technology, links, imageLinks }
+    let id = 0;
+    let slideArray = ref([
+        {
+            id: id++,
+            title: "Signup form",
+            technology: "",
+            link: "https://github.com/Sikiroux/TOP-Sign-up-form",
+            imageLinks: "./src/components/images/TOP-signup-form.png"
+        }
+    ])
+
+    return{ title, date, technology, links, imageLinks, slideArray }
+    
 })
