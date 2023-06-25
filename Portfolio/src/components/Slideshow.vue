@@ -66,4 +66,17 @@ console.log(slides);
         color: rgb(255, 255, 255);
         font-weight: bold;
     }
+
+    ::-webkit-scrollbar {
+        background-color: rgb(63, 63, 63);
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        background-color: rgb(63, 63, 63);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(255, 255, 255);
+        border-radius: 25px;
+        border: 2px solid black;
+    }
 </style>
