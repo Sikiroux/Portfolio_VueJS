@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import TheHeader from './components/Header.vue'
 import TheFooter from './components/Footer.vue'
 import Slideshow from './components/Slideshow.vue'
+import Modal from './components/ModalProject.vue'
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import Slideshow from './components/Slideshow.vue'
     </p>
   </main>
   <Slideshow></Slideshow>
+  <Modal></Modal>
   <TheFooter></TheFooter>
   </body>
   
@@ -40,13 +42,17 @@ import Slideshow from './components/Slideshow.vue'
  main a {
   text-decoration: none;
   color: white;
+  max-width: 300px;
  }
 
  main h1 {
   font-weight: bold;
   font-size: 3.5rem;
   margin-bottom: 15px;
+  max-width: 300px;
+  
  }
+
 
  p {
   font-size: 1.2rem;

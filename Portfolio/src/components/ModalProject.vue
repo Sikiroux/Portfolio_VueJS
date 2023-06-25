@@ -1,73 +1,58 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import {useModalStore} from '../stores/modal'
 
+
 const store = useModalStore();
+const modals = ref(false);
+const title = ref("");
+const date = ref("");
+const technology = ref("");
+const links = ref("");
+const imageLinks = ref("")
 
-
-onMounted(() => {
-    const addButton = document.querySelector(".form__add-button");
-    const closeButton = document.querySelector(".form__close-button");
-    const modal = document.querySelector(".modal-container");
-    const buttonProject = document.querySelector(".add-project-button");
-    const title = document.querySelector("#title");
-    const date = document.querySelector("#date");
-    const technology = document.querySelector("#technology");
-    const links = document.querySelector("#links");
-    const imageLinks = document.querySelector("#image-links");
-
-    const slideShow = document.querySelector(".slideshow");
-    
-
-    
-    function closeModal() {
-        modal.style.display = "none";
+function openModal() {
+        modals.value = true;
+        console.log("here")
+        return;
     }
 
-    function openModal() {
-        modal.style.display = "flex";
-    }
 
-    function preventSubmit(event) {
-        event.preventDefault();
-        
-    }
-
-    function registeredModalData() {
-        store.title = title.value;
-        store.date = date.value;
-        store.technology = technology.value;
-        store.links = links.value;
-        store.imageLinks = imageLinks.value;
-    }
-
-    function removeFieldsData() {
-        title.value = "";
-        date.value = "";
-        technology.value = "";
-        links.value = "";
-        imageLinks.value = "";
-
-    }
-    
-    function onAddButton() {
+function onAddButton() {
         preventSubmit(event);
         registeredModalData();
         removeFieldsData();
         closeModal();
-        console.log(store.title);
-        console.log(store.date);
+}
+
+function closeModal() {
+        modals.value = false;
+        console.log("there")
     }
 
     
-    closeButton.addEventListener("click", closeModal, false);
-    buttonProject.addEventListener("click", openModal, false);
-    addButton.addEventListener("click", onAddButton, false);
 
-    modal.style.display = "none";
-})
+function preventSubmit(event) {
+    event.preventDefault();
+}
 
+function registeredModalData() {
+    store.title = title.value;
+    store.date = date.value;
+    store.technology = technology.value;
+    store.links = links.value;
+    store.imageLinks = imageLinks.value;
+    console.log(title.value);
+}
 
+function removeFieldsData() {
+    title.value = "";
+    date.value = "";
+    technology.value = "";
+    links.value = "";
+    imageLinks.value = "";
+
+}
 
 
 </script>
@@ -77,29 +62,30 @@ onMounted(() => {
 </script>
 
 <template>
-    <form class="modal-container">
+    <button class="add-project-button" @click="openModal">Ajouter projet</button>
+    <form class="modal-container" v-if="modals">
         <div class="input-holder">
             <label for="title">Titre :</label>
-            <input id="title" type="text">
+            <input id="title" type="text" v-model="title">
         </div>
         <div class="input-holder">
             <label for="date">Date :</label>
-            <input id="date" type="date">
+            <input id="date" type="date" v-model="date">
         </div>
         <div class="input-holder">
             <label for="technology">Technologie utilisée(s) :</label>
-            <input id="technology" type="text">
+            <input id="technology" type="text" v-model="technology">
         </div>
         <div class="input-holder">
             <label for="links">Liens vers site/repository</label>
-            <input type="text" id="links">
+            <input type="text" id="links" v-model="links">
         </div>
         <div class="input-holder">
             <label for="image-links">Liens vers image d'exemple: </label>
-            <input type="text" id="image-links">
+            <input type="text" id="image-links" v-model="imageLinks">
         </div>
         <div class="button-container">
-            <button type="submit" class="form__add-button">Ajouter</button>
+            <button type="submit" class="form__add-button" @click="onAddButton">Ajouter</button>
             <button type="button" class="form__close-button">X</button>
         </div>
     </form>
@@ -107,6 +93,7 @@ onMounted(() => {
 
 <style scoped>
     .modal-container {
+        display: flex;
         position : absolute;
         height : 400px;
         width : 500px;
@@ -150,6 +137,13 @@ onMounted(() => {
     .modal-container input {
         margin-right: auto;
         margin-left: auto;
+    }
+
+    .add-project-button{
+        position: absolute;
+        left: 50%;
+        top: 84%;
+        transform: translate(-50%);
     }
     
 </style>
