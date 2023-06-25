@@ -4,18 +4,18 @@ import {useModalStore} from '../stores/modal'
 
 
 const store = useModalStore();
+const arrayData = store.slideArray;
 const modals = ref(false);
 const title = ref("");
 const date = ref("");
 const technology = ref("");
 const links = ref("");
 const imageLinks = ref("")
+let id = store.id;
 
 function openModal() {
         modals.value = true;
-        console.log("here")
-        return;
-    }
+}
 
 
 function onAddButton() {
@@ -27,8 +27,7 @@ function onAddButton() {
 
 function closeModal() {
         modals.value = false;
-        console.log("there")
-    }
+}
 
     
 
@@ -37,12 +36,14 @@ function preventSubmit(event) {
 }
 
 function registeredModalData() {
-    store.title = title.value;
-    store.date = date.value;
-    store.technology = technology.value;
-    store.links = links.value;
-    store.imageLinks = imageLinks.value;
-    console.log(title.value);
+   let modalDataObject = {
+        id: id++,
+        title: title.value,
+        technology: technology.value,
+        link: links.value,
+        imageLinks: imageLinks.value
+    }
+    arrayData.push(modalDataObject);
 }
 
 function removeFieldsData() {
@@ -86,7 +87,7 @@ function removeFieldsData() {
         </div>
         <div class="button-container">
             <button type="submit" class="form__add-button" @click="onAddButton">Ajouter</button>
-            <button type="button" class="form__close-button">X</button>
+            <button type="button" class="form__close-button" @click="closeModal">X</button>
         </div>
     </form>
 </template>

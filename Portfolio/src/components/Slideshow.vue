@@ -3,9 +3,8 @@ import { onMounted } from "vue";
 import {useModalStore} from "../stores/modal"
 
 
-const store = useModalStore();
+let store = useModalStore();
 let slides = store.slideArray
-console.log(slides);
 
 </script>
 
