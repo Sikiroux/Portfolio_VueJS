@@ -40,13 +40,17 @@ import Slideshow from './components/Slideshow.vue'
  main a {
   text-decoration: none;
   color: white;
+  max-width: 300px;
  }
 
  main h1 {
   font-weight: bold;
   font-size: 3.5rem;
   margin-bottom: 15px;
+  max-width: 300px;
+  
  }
+
 
  p {
   font-size: 1.2rem;

@@ -21,7 +21,7 @@
     footer {
         width: 100%;
         position: absolute;
-        bottom: 5%;
+        bottom: 2%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -31,13 +31,13 @@
     nav{
         margin: 0;
         display: flex;
-        gap: 45px;
+        gap: 25px;
         margin-bottom: 15px;
     }
 
     a div {
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        width: 60px;
         background-size: cover;
     }
 
@@ -46,8 +46,8 @@
     }
 
     a {
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        width: 60px;
     }
 
     a div.github-icon {
