@@ -15,11 +15,9 @@ let imageLinks = ref("");
 
 function openModal() {
     display.value = true;
-    console.log(display.value);
 }
 
 function getDataForModal(slide) {
-    console.log(title.value);
     title.value = slide.title;
     date.value = slide.date;
     technology.value = slide.technology;

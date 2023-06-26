@@ -12,7 +12,7 @@ import { onMounted } from "vue";
         <nav class="navigation">
             <a href="#">Présentation</a>
             <a href="#">Créations</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 </template>
