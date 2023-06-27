@@ -24,7 +24,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-bottom: 15px;
+        margin-top: 40px;
     }
 
     nav{

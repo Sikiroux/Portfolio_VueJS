@@ -1,5 +1,8 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import Contact from "./Contact.vue"
+
+const display = ref(true);
 </script>
 
 <script>

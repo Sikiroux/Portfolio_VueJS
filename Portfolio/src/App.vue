@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import TheHeader from './components/Header.vue'
 import TheFooter from './components/Footer.vue'
 import Slideshow from './components/Slideshow.vue'
-import Modal from './components/ModalProject.vue'
 import Contact from './components/Contact.vue'
 </script>
 
@@ -11,7 +10,7 @@ import Contact from './components/Contact.vue'
   <body>
   <TheHeader></TheHeader>
   <!-- Setting up main content -->
-  <main>
+  <main class=".main">
     <section>
       <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
       <h1>Ia orana.</h1>
@@ -25,7 +24,6 @@ import Contact from './components/Contact.vue'
 
       </p>
     </section>
-    
     <Slideshow></Slideshow>
     <Contact></Contact>
   </main>
@@ -39,6 +37,7 @@ import Contact from './components/Contact.vue'
 
 
 <style scoped>
+
 
  main section{
   margin-left: 130px;

@@ -58,9 +58,15 @@
   font-weight: normal;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   color: var(--color-text); 
   background: linear-gradient(45deg, var(--color-background), rgb(122, 120, 120));
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }

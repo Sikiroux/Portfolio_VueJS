@@ -61,7 +61,7 @@ function handleCloseModal() {
     .slideshow {
         display: flex;
         overflow-x: scroll;
-        height: 360px;
+        height: 380px;
     }
 
     .slideshow__item {
@@ -83,6 +83,7 @@ function handleCloseModal() {
     .item__background-image:hover {
         transition-duration: 450ms;
         filter: blur(0);
+        box-shadow: 8px 8px 10px rgb(251, 255, 197);
     }
 
     .item__title {
