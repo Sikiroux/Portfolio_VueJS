@@ -21,16 +21,16 @@ const props = defineProps(['display', 'title', 'date', 'technology', 'links', 'i
             <p>{{ date }}</p>
         </div>
         <div class="data-holder">
-            <h3 class="title">Technologie utilisée(s) : </h3>
+            <h3 class="title">Technology : </h3>
             <p>{{ technology }}</p>
         </div>
         <div class="data-holder">
-            <h3 class="title">Liens vers site/repository : </h3>
-            <a :href="links" target="_blank" class="link">Cliquez ici</a>
+            <h3 class="title">Link to site/repository: </h3>
+            <a :href="links" target="_blank" class="link">Click here</a>
         </div>
         <div class="data-holder">
-            <h3 class="title">Liens vers image d'exemple : </h3>
-            <a :href="imageLinks" target="_blank" class="link">Ouvrez moi</a>
+            <h3 class="title">Link to image exemple: </h3>
+            <a :href="imageLinks" target="_blank" class="link">Open me</a>
         </div>
         <div class="button-container">
             <button type="button" class="form__close-button" @click="$emit('close')">X</button>

@@ -11,25 +11,38 @@ const display = ref(true);
 
 <template>
     <header class="header-component">
-        <div class="logo-holder"></div>
-        <nav class="navigation">
-            <a href="#">Présentation</a>
-            <a href="#">Créations</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-container">
+            <div class="logo-holder"></div>
+            <nav class="navigation">
+                <a href="#presentation">Presentation</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 </template>
 
 
 
 
-<style>
+<style scoped>
     .header-component {
+        position: sticky;
+        top: 1px;
+        transform: translateY(-2px);
         display: flex;
         width: 100%;
-        margin-top: 15px;
         align-items: center;
         padding-bottom: 20px;
+        z-index: 10;
+        background: linear-gradient(45deg, var(--color-background), rgb(122, 120, 120));
+        padding-top: 15px;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
     
     .logo-holder {
@@ -69,21 +82,6 @@ const display = ref(true);
         gap: 80px;
     }
 
-    .add-project-button {
-        padding: 4px;
-        border: 1px solid white;
-        background-color: rgb(43, 43, 43);
-        color: white;
-        border-radius: 5px;
-        margin-right: 50px;
-    }
-
-    .add-project-button:hover {
-        box-shadow:  rgb(204, 204, 204) 1px 0 10px;
-        transition-duration: 450ms;
-        text-shadow: rgb(204, 204, 204) 1px 0 10px;
-        cursor: pointer;
-    }
 
     
 </style>
