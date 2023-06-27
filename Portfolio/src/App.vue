@@ -11,6 +11,7 @@ import Contact from './components/Contact.vue'
   <TheHeader></TheHeader>
   <!-- Setting up main content -->
   <main class=".main">
+    <a class="anchor" id="presentation"></a>
     <section>
       <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
       <h1>Ia orana.</h1>
@@ -44,6 +45,14 @@ import Contact from './components/Contact.vue'
   margin-top: 80px;
   color: white;
  }
+
+ a.anchor {
+  display: block;
+  position: relative;
+  top: -200px;
+  visibility: hidden;
+ }
+
 
  main a {
   text-decoration: none;

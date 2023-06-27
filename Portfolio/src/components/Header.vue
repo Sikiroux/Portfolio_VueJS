@@ -3,6 +3,53 @@ import { onMounted, ref } from "vue";
 import Contact from "./Contact.vue"
 
 const display = ref(true);
+
+onMounted(() => {
+    let linksContainer = document.querySelector(".navigation");
+    let links = linksContainer.querySelectorAll("a");
+    let project = document.querySelector("#project");
+    let contact = document.querySelector("#contact");
+    let presentation = document.querySelector("#presentation");
+    console.log(presentation.offsetTop)
+    function changeStyleOnScroll() {
+        let projectTop = project.offsetTop;
+        let contactTop = 700;
+        let presentationTop = -20;
+        console.log(contactTop);
+        console.log(contact.id)
+        window.onscroll = () => {
+            console.log(scrollY)
+            let currentSection = "";
+            if (scrollY >= contactTop) {
+                currentSection = contact.id
+            } else if (scrollY >= projectTop) {
+                currentSection = project.id;
+            } else if (scrollY >= presentationTop) {
+                currentSection = presentation.id;
+            }
+
+            links.forEach(link => {
+                link.classList.remove("active");
+                if(link.classList.contains(currentSection)){
+                    link.classList.add("active");
+                }
+            })
+        }
+    }
+    
+    function changeLinkStyleOnCLick() {
+        links.forEach(link => {
+        link.addEventListener("click",() => {
+            links.forEach(link => {
+                link.classList.remove("active");
+            })
+            link.classList.add("active");
+        })
+    })
+    }
+    changeLinkStyleOnCLick();
+    changeStyleOnScroll()
+})
 </script>
 
 <script>
@@ -14,9 +61,9 @@ const display = ref(true);
         <div class="header-container">
             <div class="logo-holder"></div>
             <nav class="navigation">
-                <a href="#presentation">Presentation</a>
-                <a href="#project">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#presentation" class="presentation">Presentation</a>
+                <a href="#project" class="project">Projects</a>
+                <a href="#contact" class="contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -65,6 +112,16 @@ const display = ref(true);
         color: white;
         font-size: 1.3rem;
     }
+
+    .navigation a:active {
+        text-decoration: underline;
+
+    }
+
+    .navigation a.active {
+        text-decoration: underline;
+    }
+
 
     .navigation a:hover {
         text-shadow: rgb(204, 204, 204) 1px 0 10px;
