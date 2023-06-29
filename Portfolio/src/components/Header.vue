@@ -59,7 +59,9 @@ onMounted(() => {
 <template>
     <header class="header-component">
         <div class="header-container">
-            <div class="logo-holder"></div>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                <div class="logo-holder"></div>
+            </a>
             <nav class="navigation">
                 <a href="#presentation" class="presentation">Presentation</a>
                 <a href="#project" class="project">Projects</a>

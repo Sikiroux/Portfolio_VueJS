@@ -10,24 +10,24 @@ import Contact from './components/Contact.vue'
   <body>
   <TheHeader></TheHeader>
   <!-- Setting up main content -->
-  <main class=".main">
-    <a class="anchor" id="presentation"></a>
-    <section>
-      <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
-      <h1>Ia orana.</h1>
-      </a>
-      <p>My name is Damien Ekouma Ndong, I'm still learning web developement.
-        At the moment I did not build any full fledged website but all my projects can be seen here.  
-      </p>
-      <br/>
-      <p>
-        I love learning and I'm always looking to get better day after day.
+    <main class=".main">
+      <a class="anchor" id="presentation"></a>
+      <section>
+        <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
+        <h1>Ia orana.</h1>
+        </a>
+        <p>My name is Damien Ekouma Ndong, I'm still learning web developement.
+          At the moment I did not build any full fledged website but all my projects can be seen here.  
+        </p>
+        <br/>
+        <p>
+          I love learning and I'm always looking to get better day after day.
 
-      </p>
-    </section>
-    <Slideshow></Slideshow>
-    <Contact></Contact>
-  </main>
+        </p>
+      </section>
+      <Slideshow></Slideshow>
+      <Contact></Contact>
+    </main>
   
   
   

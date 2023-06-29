@@ -43,8 +43,9 @@ function executeFunction() {
         width: 701px;
         display: flex;
         flex-direction: column;
-        margin: auto;
         transform: translateX(67%);
+        position: relative;
+        top: 110px;
     }
 
     form {
@@ -53,6 +54,7 @@ function executeFunction() {
         width: 700px;
         border: 3px solid black;
         border-radius: 15px;
+        background-color: rgb(51, 49, 49);
     }
 
     legend{
