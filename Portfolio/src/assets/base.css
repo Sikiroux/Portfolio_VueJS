@@ -70,3 +70,8 @@ body {
   height: 100%;
   width: 100%;
 }
+
+@font-face {
+  font-family: "Robotech";
+  src: url(../components/font/ROBOTECH\ GP.ttf) format(truetype);
+}
