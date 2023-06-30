@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import {useModalStore} from "../stores/modal"
 import Modal from "./ModalProject.vue"
 
@@ -34,6 +34,36 @@ function executeFunction(slide) {
 function handleCloseModal() {
     display.value = false;
 }
+
+
+
+watch(display, (newValue, oldValue) => {
+    if(newValue === true) {
+
+        //Add timeout to prevent modal from closing directly
+
+        setTimeout(() => {
+            function clickHandler() {
+                let modal = document.querySelector(".modal-container");
+
+                //Close modal if clicked outside and only outside of it
+                if(modal && !modal.contains(event.target)) {
+                    handleCloseModal();
+                }
+            }
+
+            window.addEventListener("mousedown", clickHandler)
+
+            //We watch the value again to see when we can remove the listener
+            watch(display, (newValue) => {
+                //when display go back to its default value remove evenListener
+                if(newValue === false) {
+                    window.removeEventListener("mousedown", clickHandler)
+                }
+            })
+        }, 200)
+    }
+})
 </script>
 
 <template>
