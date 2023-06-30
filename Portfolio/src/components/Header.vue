@@ -10,16 +10,12 @@ onMounted(() => {
     let project = document.querySelector("#project");
     let contact = document.querySelector("#contact");
     let presentation = document.querySelector("#presentation");
-    console.log(presentation.offsetTop)
+
     function changeStyleOnScroll() {
         let projectTop = project.offsetTop;
         let contactTop = 600;
         let presentationTop = -20;
-        console.log(projectTop)
-        console.log(contactTop);
-        console.log(contact.id)
         window.onscroll = () => {
-            console.log(scrollY)
             let currentSection = "";
             if (scrollY >= contactTop) {
                 currentSection = contact.id
@@ -48,6 +44,7 @@ onMounted(() => {
         })
     })
     }
+    
     changeLinkStyleOnCLick();
     changeStyleOnScroll()
 })

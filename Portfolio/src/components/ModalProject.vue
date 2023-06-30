@@ -5,6 +5,11 @@ import {useModalStore} from '../stores/modal'
 
 const props = defineProps(['display', 'title', 'date', 'technology', 'links', 'imageLinks'])
 
+function closeDisplay() {
+    display.value = false;
+}
+
+
 </script>
 
 <script>
