@@ -37,14 +37,12 @@ function executeFunction() {
 </template>
 
 <style scoped>
-    section {
-        height: 700px;
-        font-size: 1.5rem;
-        width: 701px;
+    section#contact {
         display: flex;
-        flex-direction: column;
-        margin: auto;
-        transform: translateX(67%);
+        justify-content: center;
+        margin-left: 0px;
+        margin-top: 250px;
+        margin-bottom: 100px;
     }
 
     form {
@@ -53,6 +51,7 @@ function executeFunction() {
         width: 700px;
         border: 3px solid black;
         border-radius: 15px;
+        background-color: rgb(51, 49, 49);
     }
 
     legend{

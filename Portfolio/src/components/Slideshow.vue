@@ -37,7 +37,8 @@ function handleCloseModal() {
 </script>
 
 <template>
-    <h2 class="project-title-section">Projects</h2>
+    <a class="anchor" id="project"></a>
+    <h2 class="project-title-section" id="project">Projects</h2>
     <section class="slideshow-container">
         <ul class="slideshow">
             <li class="slideshow__item" v-for="slide in slides" :key="slide.id" @click="executeFunction(slide)">
@@ -56,6 +57,14 @@ function handleCloseModal() {
         font-size: 2.3rem;
         font-weight: bold;
         color: white;
+        margin-top: 100px;
+    }
+
+    a.anchor{
+        display: block; 
+        position: relative; 
+        top: -50px; 
+        visibility: hidden;
     }
 
     .slideshow {
