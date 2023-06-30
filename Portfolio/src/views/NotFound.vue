@@ -7,22 +7,14 @@ import TheFooter from "../components/Footer.vue"
 <template>
     <section>
         <h1>404 Error</h1>
-        <p>Page not found</p>
-        <p>That's awkward try and go to </p>
-        <RouterLink to="/">Home</RouterLink>
         <img src="../components/images/computer.png">
-        <TheFooter></TheFooter>
+        <p>Page not found</p>
+        <p>That's awkward try and go to :</p>
+        <RouterLink to="/">Home</RouterLink>
     </section>
 </template>
 
 <style scoped>
-
-
-    
-    template {
-        display: flex;
-        color: blue;
-    }
 
     section {
         height: 100vh;
@@ -30,10 +22,9 @@ import TheFooter from "../components/Footer.vue"
         display: flex;
         flex-direction: column;
         color: white;
-    }
-
-    footer {
-        margin-top: auto;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
     }
 
     h1  {
@@ -45,6 +36,16 @@ import TheFooter from "../components/Footer.vue"
     img {
         height: 200px;
         width: 200px;
+        margin: 30px 0;
+        color: white;
     }
 
+    a {
+        color: white;
+        margin-top: 20px;
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 2px;
+        background-color: rgb(32, 32, 32);
+    }
 </style>
