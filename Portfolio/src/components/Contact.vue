@@ -37,15 +37,12 @@ function executeFunction() {
 </template>
 
 <style scoped>
-    section {
-        height: 700px;
-        font-size: 1.5rem;
-        width: 701px;
+    section#contact {
         display: flex;
-        flex-direction: column;
-        transform: translateX(67%);
-        position: relative;
-        top: 110px;
+        justify-content: center;
+        margin-left: 0px;
+        margin-top: 250px;
+        margin-bottom: 100px;
     }
 
     form {

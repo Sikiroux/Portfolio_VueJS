@@ -57,6 +57,7 @@ function handleCloseModal() {
         font-size: 2.3rem;
         font-weight: bold;
         color: white;
+        margin-top: 100px;
     }
 
     a.anchor{
