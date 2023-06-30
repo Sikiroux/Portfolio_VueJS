@@ -8,9 +8,9 @@ import Contact from './components/Contact.vue'
 
 <template>
   <body>
-  <TheHeader></TheHeader>
+  <!-- <TheHeader></TheHeader> -->
   <!-- Setting up main content -->
-    <main class=".main">
+    <!-- <main class=".main">
       <a class="anchor" id="presentation"></a>
       <section>
         <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
@@ -31,7 +31,8 @@ import Contact from './components/Contact.vue'
   
   
   
-  <TheFooter></TheFooter>
+  <TheFooter></TheFooter> -->
+  <RouterView></RouterView>
   </body>
   
 </template>
@@ -40,7 +41,7 @@ import Contact from './components/Contact.vue'
 <style scoped>
 
 
- main section{
+ /* main section{
   margin-left: 130px;
   margin-top: 80px;
   color: white;
@@ -72,5 +73,5 @@ import Contact from './components/Contact.vue'
  p {
   font-size: 1.2rem;
   width: 700px;
- }
+ } */
 </style>
