@@ -68,7 +68,7 @@ watch(display, (newValue, oldValue) => {
 
 <template>
     <a class="anchor" id="project"></a>
-    <h2 class="project-title-section" id="project">Projects</h2>
+    <h2 class="project-title-section">Projects</h2>
     <section class="slideshow-container">
         <ul class="slideshow">
             <li class="slideshow__item" v-for="slide in slides" :key="slide.id" @click="executeFunction(slide)">

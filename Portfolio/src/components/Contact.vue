@@ -18,7 +18,7 @@ function executeFunction() {
 <template>  
         <section id="contact">
             <form action="mailto:damieneko689@gmail.com" method="post" enctype="plain/text">
-                <legend>Contact</legend>
+                <h2>Contact</h2>
                 <div class="input-container">
                     <input type="text" id="lastname" placeholder="Nom">
                 </div>
@@ -54,7 +54,7 @@ function executeFunction() {
         background-color: rgb(51, 49, 49);
     }
 
-    legend{
+    h2{
         text-align: center;
         font-weight: bold;
         height: 35px;

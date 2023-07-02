@@ -8,10 +8,10 @@ import Contact from "../components/Contact.vue"
 
 
 <template>
-    <section class="body">
+    <div class="page-container">
         <TheHeader></TheHeader>
         <!-- Setting up main content -->
-        <main class=".main">
+        <section class="main">
                 <a class="anchor" id="presentation"></a>
                 <section>
                     <a href="https://glosbe.com/ty/en/ia%20orana" target="_blank">
@@ -29,20 +29,20 @@ import Contact from "../components/Contact.vue"
             <Slideshow></Slideshow>
             <Contact></Contact>
         
-        </main>
+        </section>
         <TheFooter></TheFooter>
-    </section>
+    </div>
   
 </template>
 
 <style scoped>
 
-.body {
+.page-container {
     display: flex;
     flex-direction: column;
 }
 
-main section{
+.main section{
   margin-left: 130px;
   margin-top: 80px;
   color: white;
@@ -56,13 +56,13 @@ main section{
  }
 
 
- main a {
+ .main a {
   text-decoration: none;
   color: white;
   max-width: 300px;
  }
 
- main h1 {
+ .main h1 {
   font-weight: bold;
   font-size: 3.5rem;
   margin-bottom: 15px;
