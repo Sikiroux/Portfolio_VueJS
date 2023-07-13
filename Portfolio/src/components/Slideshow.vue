@@ -17,6 +17,7 @@ function openModal() {
     display.value = true;
 }
 
+//Get the slide data from the store then assign it to variables
 function getDataForModal(slide) {
     title.value = slide.title;
     date.value = slide.date;
@@ -36,7 +37,7 @@ function handleCloseModal() {
 }
 
 
-
+//Create a watch function to verify when the modal is open and a a listener to it when it's true 
 watch(display, (newValue, oldValue) => {
     if(newValue === true) {
 
@@ -67,6 +68,7 @@ watch(display, (newValue, oldValue) => {
 </script>
 
 <template>
+    <!-- Create an anchor for the anchor link -->
     <a class="anchor" id="project"></a>
     <h2 class="project-title-section">Projects</h2>
     <section class="slideshow-container">

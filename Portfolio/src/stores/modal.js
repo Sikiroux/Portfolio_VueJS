@@ -10,6 +10,8 @@ export const useModalStore = defineStore("modal", ()=> {
     let display = ref("");
 
     let id = 0;
+
+    //Create the array for the information stored inside the slide within the slideshow
     let slideArray = ref([
         {
             id: id++,

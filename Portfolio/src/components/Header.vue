@@ -11,6 +11,7 @@ onMounted(() => {
     let contact = document.querySelector("#contact");
     let presentation = document.querySelector("#presentation");
 
+    //Function to set an underline when scrolling on the right section
     function changeStyleOnScroll() {
         let projectTop = project.offsetTop;
         let contactTop = 600;
@@ -34,6 +35,8 @@ onMounted(() => {
         }
     }
     
+
+    //Function to add underline when a link is clicked and remove the underline from the othes links
     function changeLinkStyleOnCLick() {
         links.forEach(link => {
         link.addEventListener("click",() => {
